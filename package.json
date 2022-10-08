@@ -1,0 +1,23 @@
+{
+  "name": "Automation ToolBox",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "icon": "icon/android-chrome-512x512.png",
+  "scripts": {
+    "start": "electron .",
+    "package" : "electron-builder",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "build":{"publish":[{
+    "provider":"github",
+    "owner":"Thuyavanfredo",
+    "repo":"Automation-ToolBox"
+  }]},
+  "author": "Thuyavan",
+  "license": "ISC",
+  "dependencies": {
+    "electron-builder": "^23.6.0",
+    "electron-updater": "^5.3.0"
+  }
+}
