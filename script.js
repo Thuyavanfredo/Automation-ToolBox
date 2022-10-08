@@ -90,11 +90,8 @@ $(document).ready(function () {
           '.cvx"/></figure>',
         ],
       ];
-      if (formProps.length <= 0) {
-        alert("Please enter Graphic Control Number");
-        return;
-      }
       const x = templates[formProps.radio].join(formProps.graphics);
+      console.log(formProps.radio)
       navigator.clipboard.writeText(x);
       $(".modalopen a").click()
     });
@@ -128,23 +125,23 @@ $(document).ready(function () {
                             <label  class="label">Figure</label>
                         </div>
                         <div class="list">
-                            <input class ="r" value=0 type="radio" name="radio">
+                            <input class ="r" value=1 type="radio" name="radio">
                             <label class="label">Table</label>
                         </div>
                     </div>
                     <div class="list2">
                         <div class="list">
-                            <input class ="r" value=0 type="radio" name="radio">
+                            <input class ="r" value=2 type="radio" name="radio">
                             <label class="label">Step</label>
                         </div>
                         <div class="list">
-                            <input class ="r" value=0 type="radio" name="radio">
+                            <input class ="r" value=3 type="radio" name="radio">
                             <label class="label">Footnote</label>
                         </div>
                     </div>
                     <div class="list2">
                         <div class="list">
-                            <input class ="r" value=0 type="radio" name="radio">
+                            <input class ="r" value=4 type="radio" name="radio">
                             <label class="label">Section</label>
                         </div>
                     </div>
@@ -163,21 +160,22 @@ $(document).ready(function () {
       const formProps = Object.fromEntries(formData);
       const templates = [
         '<xref format="dita" href="#./IE.ID"scope="local" type="figure"></xref>',
-        '<xref format="dita" href="#./IE.ID"scope="local" type="step"></xref>',
-        '<xref format="dita" href="#./IE.ID"scope="local" type="sect"></xref>',
         '<xref format="dita" href="#./IE.ID"scope="local" type="table"></xref>',
+        '<xref format="dita" href="#./IE.ID"scope="local" type="step"></xref>',
         '<xref format="dita" href="#./IE.ID"scope="local" type="fn"></xref>',
+        '<xref format="dita" href="#./IE.ID"scope="local" type="sect"></xref>',
       ];
       if (formProps.length <= 0) {
         alert("Please enter Graphic Control Number");
         return;
       }
       // const x=templates[formProps.radio].join(formProps.graphics)
-      const w = templates[formProps.radio].split("IE");
+      const w = (templates[formProps.radio]).split("IE");
       const x = w.join(formProps.IE);
       const y = x.split("ID");
       const z = y.join(formProps.ID);
       navigator.clipboard.writeText(z);
+      console.log(z)
       $(".modalopen a").click()
     });
     $(".bt1 button:nth-child(2)").click(function (e) {
@@ -221,23 +219,29 @@ $(document).ready(function () {
                     <input type="checkbox" name="engtomet3">
                 </div>
             </div>
-            <div class="met">
+            <div class="tol6">
                 <label>Temperature</label>
                 <input  type="text" placeholder="Enter value" name="value3">
+                <img class="plus" src="img/Plus_or_minus_symbol.svg.png" width= "36px" height= "46px" alt="">
+                <input class="input1"  type="text" placeholder="Enter tolerance value" name="tol1b">
                 <div class="toggle">
                     <input type="checkbox" name="engtomet4">
                 </div>
             </div>
-            <div class="met">
+            <div class="tol4">
                 <label>Flow</label>
                 <input  type="text" placeholder="Enter value" name="value4">
+                <img class="plus" src="img/Plus_or_minus_symbol.svg.png" width= "36px" height= "46px" alt="">
+                <input class="input1"  type="text" placeholder="Enter tolerance value" name="tol1c">
                 <div class="toggle">
                     <input type="checkbox" name="engtomet5">
                 </div>
             </div>
-            <div class="met">
+            <div class="tol5">
                 <label>Pressure</label>
                 <input  type="text" placeholder="Enter value" name="value5">
+                <img class="plus" src="img/Plus_or_minus_symbol.svg.png" width= "36px" height= "46px" alt="">
+                <input class="input1"  type="text" placeholder="Enter tolerance value" name="tol1d">
                 <div class="toggle">
                     <input type="checkbox" name="engtomet6">
                 </div>
@@ -253,10 +257,7 @@ $(document).ready(function () {
             <div class="bt1">
                 <button type="submit">Generate</button>
                 <button type="reset">Clear</button>
-            </div>
-            <div class="bt2">
-            <button type="submit">Generate</button>
-        </div>
+            </div>           
           </div>
           <div class="upright">
             <h3>Metric to English</h3>
@@ -357,8 +358,8 @@ $(document).ready(function () {
                 Number(formProps.tol1) ? "± " + formProps.tol1 + " " : ""
               }inch</english></unitsgrp>`;
             }else{
-              inputDecimal= ((formProps.value1.includes(".0")) ? formProps.value1 : formProps.value1 + '.0');
-              tolDecimal= ((formProps.tol1.includes(".0")) ? formProps.tol1 : formProps.tol1 + '.0');
+              inputDecimal= ((formProps.value1.includes(".")) ? formProps.value1 : formProps.value1 + '.0');
+              tolDecimal= ((formProps.tol1.includes(".")) ? formProps.tol1 : formProps.tol1 + '.0');
               formProps.cvalue = (inputDecimal/0.03937007874).toFixed(
                 String(inputDecimal).split(".")[1]?.length-1
               );
@@ -370,6 +371,7 @@ $(document).ready(function () {
               }mm</metric><english>${inputDecimal} ${
                 Number(tolDecimal) ? "± " + tolDecimal + " " : ""
               }inch</english></unitsgrp>`;
+              console.log(formProps.tol)
             }
         }else{
           if ((formProps.value1.includes(".")) && (formProps.tol1.includes("."))){
@@ -385,8 +387,8 @@ $(document).ready(function () {
               Number(formProps.ctolvalue) ? "± " + formProps.ctolvalue + " " : ""
             }inch</english></unitsgrp>`;
           }else{
-            inputDecimal= ((formProps.value1.includes(".0")) ? formProps.value1 : formProps.value1 + '.0');
-            tolDecimal= ((formProps.tol1.includes(".0")) ? formProps.tol1 : formProps.tol1 + '.0');
+            inputDecimal= ((formProps.value1.includes(".")) ? formProps.value1 : formProps.value1 + '.0');
+            tolDecimal= ((formProps.tol1.includes(".")) ? formProps.tol1 : formProps.tol1 + '.0');
             formProps.cvalue = (inputDecimal*0.03937007874).toFixed(
               String(inputDecimal).split(".")[1]?.length+1
             );
@@ -402,7 +404,7 @@ $(document).ready(function () {
         }
       }else if (formProps.value1a){
         if(formProps.engtomet2){
-          if ((formProps.value1a.includes(".")) || (formProps.tol1a.includes("."))){
+          if ((formProps.value1a.includes(".")) && (formProps.tol1a.includes("."))){
             formProps.cvalue = (formProps.value1a/0.39370079).toFixed(
               String(formProps.value1a).split(".")[1]?.length-1
             );
@@ -415,8 +417,8 @@ $(document).ready(function () {
               Number(formProps.tol1a) ? "± " + formProps.tol1a + " " : ""
             }inch</english></unitsgrp>`;
           }else{
-            inputDecimal= ((formProps.value1a.includes(".0")) ? formProps.value1a : formProps.value1a + '.0');
-            tolDecimal= ((formProps.tol1a.includes(".0")) ? formProps.tol1a : formProps.tol1a + '.0');
+            inputDecimal= ((formProps.value1a.includes(".")) ? formProps.value1a : formProps.value1a + '.0');
+            tolDecimal= ((formProps.tol1a.includes(".")) ? formProps.tol1a : formProps.tol1a + '.0');
             formProps.cvalue = (inputDecimal/0.39370079).toFixed(
               String(inputDecimal).split(".")[1]?.length-1
             );
@@ -430,7 +432,7 @@ $(document).ready(function () {
             }inch</english></unitsgrp>`;
           }
         }else{
-          if ((formProps.value1a.includes(".")) || (formProps.tol1a.includes("."))){
+          if ((formProps.value1a.includes(".")) && (formProps.tol1a.includes("."))){
             formProps.cvalue = (formProps.value1a * 0.39370079).toFixed(
               String(formProps.value1a).split(".")[1]?.length+1
             );
@@ -443,8 +445,8 @@ $(document).ready(function () {
               Number(formProps.ctolvalue) ? "± " + formProps.ctolvalue + " " : ""
             }inch</english></unitsgrp>`;
           }else{
-            inputDecimal= ((formProps.value1a.includes(".0")) ? formProps.value1a : formProps.value1a + '.0');
-            tolDecimal= ((formProps.tol1a.includes(".0")) ? formProps.tol1a : formProps.tol1a + '.0');
+            inputDecimal= ((formProps.value1a.includes(".")) ? formProps.value1a : formProps.value1a + '.0');
+            tolDecimal= ((formProps.tol1a.includes(".")) ? formProps.tol1a : formProps.tol1a + '.0');
             formProps.cvalue = (inputDecimal*0.39370079).toFixed(
               String(inputDecimal).split(".")[1]?.length+1
             );
@@ -475,36 +477,89 @@ $(document).ready(function () {
         formProps.cvalue=((formProps.value3-32)*(0.555555555555556)).toFixed(
           String(formProps.value3).split(".")[1]?.length
         );
-        texttocopy= `<unitsgrp><metric>${formProps.cvalue} °C</metric><english>${formProps.value3} °F</english></unitsgrp>`
+        if (formProps.tol1b) {
+        formProps.ctolvalue = ((formProps.tol1b-32)*(0.555555555555556)).toFixed(
+          String(formProps.tol1b).split(".")[1]?.length
+          );
+        }
+        texttocopy= `<unitsgrp><metric>${formProps.cvalue} ${
+          Number(formProps.ctolvalue) ? "± " + formProps.ctolvalue + " " : ""
+        } °C</metric><english>${formProps.value3} ${
+          Number(formProps.tol1b) ? "± " + formProps.tol1b + " " : ""
+        }°F</english></unitsgrp>`
       }else{
         formProps.cvalue=((formProps.value3*1.8)+32).toFixed(
           String(formProps.value3).split(".")[1]?.length
         );
-        texttocopy= `<unitsgrp><metric>${formProps.value3} °C</metric><english>${formProps.cvalue} °F</english></unitsgrp>`
+        if (formProps.tol1b) {
+        formProps.ctolvalue = ((formProps.tol1b*1.8)+32).toFixed(
+          String(formProps.tol1b).split(".")[1]?.length
+          );
+        }
+        texttocopy= `<unitsgrp><metric>${formProps.value3} ${
+          Number(formProps.tol1b) ? "± " + formProps.tol1b + " " : ""
+        }°C</metric><english>${formProps.cvalue} ${
+          Number(formProps.ctolvalue) ? "± " + formProps.ctolvalue + " " : ""}°F</english></unitsgrp>`
           }
     }else if (formProps.value4){
       if (formProps.engtomet5){
         formProps.cvalue=(formProps.value4 * 3.785412).toFixed(
           String(formProps.value4).split(".")[1]?.length
         );
-        texttocopy= `<unitsgrp><metric>${formProps.cvalue} US gpm</metric><english>${formProps.value4} L/min</english></unitsgrp>`
+        if (formProps.tol1c) {
+        formProps.ctolvalue = (formProps.value4 * 3.785412).toFixed(
+          String(formProps.tol1c).split(".")[1]?.length
+          );
+        }
+        texttocopy= `<unitsgrp><metric>${formProps.cvalue} ${
+          Number(formProps.ctolvalue) ? "± " + formProps.ctolvalue + " " : ""
+        }US gpm</metric><english>${formProps.value4} ${
+          Number(formProps.tol1c) ? "± " + formProps.tol1c + " " : ""
+        }L/min</english></unitsgrp>`
       }else{
         formProps.cvalue=(formProps.value4 * 0.264172).toFixed(
           String(formProps.value4).split(".")[1]?.length
         );
-        texttocopy= `<unitsgrp><metric>${formProps.value4} L/min</metric><english>${formProps.cvalue} US gpm</english></unitsgrp>`
+        if (formProps.tol1c) {
+        formProps.ctolvalue = (formProps.value4 * 0.264172).toFixed(
+          String(formProps.tol1c).split(".")[1]?.length
+          );
+        }
+        texttocopy= `<unitsgrp><metric>${formProps.value4} ${
+          Number(formProps.tol1c) ? "± " + formProps.tol1c + " " : ""
+        }L/min</metric><english>${formProps.cvalue} ${
+          Number(formProps.ctolvalue) ? "± " + formProps.ctolvalue + " " : ""
+        }US gpm</english></unitsgrp>`
           }
   }else if (formProps.value5){
     if (formProps.engtomet6){
       formProps.cvalue=(formProps.value5 * 6.89475727999991).toFixed(
         String(formProps.value5).split(".")[1]?.length
       );
-      texttocopy= `<unitsgrp><metric>${formProps.cvalue} kPa</metric><english>${formProps.value5} psi</english></unitsgrp>`
+      if (formProps.tol1d) {
+      formProps.ctolvalue = (formProps.value5 * 6.89475727999991).toFixed(
+        String(formProps.tol1d).split(".")[1]?.length
+        );
+      }
+      texttocopy= `<unitsgrp><metric>${formProps.cvalue} ${
+        Number(formProps.ctolvalue) ? "± " + formProps.ctolvalue + " " : ""
+      }kPa</metric><english>${formProps.value5} ${
+        Number(formProps.tol1d) ? "± " + formProps.tol1d + " " : ""
+      }psi</english></unitsgrp>`
     }else{
       formProps.cvalue=(formProps.value5 * 0.14503773800722).toFixed(
         String(formProps.value5).split(".")[1]?.length
       );
-      texttocopy= `<unitsgrp><metric>${formProps.value5} kPa</metric><english>${formProps.cvalue} psi</english></unitsgrp>`
+      if (formProps.tol1d) {
+      formProps.ctolvalue = (formProps.value5 * 0.14503773800722).toFixed(
+        String(formProps.tol1d).split(".")[1]?.length
+        );
+      }
+      texttocopy= `<unitsgrp><metric>${formProps.value5} ${
+        Number(formProps.tol1d) ? "± " + formProps.tol1d + " " : ""
+      }kPa</metric><english>${formProps.cvalue} ${
+        Number(formProps.ctolvalue) ? "± " + formProps.ctolvalue + " " : ""
+      }psi</english></unitsgrp>`
         }
   }else if (formProps.value6){
     if (formProps.engtomet7){
@@ -519,9 +574,6 @@ $(document).ready(function () {
       texttocopy= `<unitsgrp><metric>${formProps.value6} L</metric><english>${formProps.cvalue} US gal</english></unitsgrp>`
         }
   }
-      if(){
-
-      }
       navigator.clipboard.writeText(texttocopy);
       $(".modalopen a").click()
     });

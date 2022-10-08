@@ -1,6 +1,6 @@
 {
   "name": "Automation-ToolBox",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "icon": "icon/android-chrome-512x512.png",
@@ -21,6 +21,7 @@
   "author": "Thuyavan",
   "license": "ISC",
   "dependencies": {
+    "electron-log": "^4.4.8",
     "electron-squirrel-startup": "^1.0.0",
     "electron-updater": "^5.3.0"
   },

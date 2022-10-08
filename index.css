@@ -85,10 +85,10 @@ body {
   height: 80vh;
 }
 .but {
-  padding: 14vh 0 0 3vw;
+  padding: 16vh 0 0 3vw;
 }
 .bt {
-  margin: 2.8vh 0 1.8vw 0;
+  margin: 2.8vh 0 2.8vw 0;
   height: 49px;
   width: 200px;
   font-family: manrope;
@@ -289,6 +289,15 @@ body {
 .tol3 input::placeholder {
   padding-left: 5px;
 }
+.tol4 input::placeholder {
+  padding-left: 5px;
+}
+.tol5 input::placeholder {
+  padding-left: 5px;
+}
+.tol6 input::placeholder {
+  padding-left: 5px;
+}
 .met input::placeholder {
   padding-left: 5px;
 }
@@ -311,7 +320,7 @@ body {
   font-size: 12px;
   color: white;
   display: inline-block;
-  margin-left: 130px;
+  margin-left: 127px;
   width: 150px;
   height: 30px;
   border: 3px solid#ca9800;
@@ -374,6 +383,120 @@ body {
   width: 12px;
   height: 15px;
 }
+.tol4 {
+  display: flex;
+  font-family: manrope;
+  font-size: 18px;
+  color: white;
+  margin: 30px 0 30px 40px;
+}
+.tol4 input {
+  width: 170px;
+  font-family: manrope;
+  font-size: 12px;
+  color: white;
+  display: inline-block;
+  margin-left: 205px;
+  width: 150px;
+  height: 30px;
+  border: 3px solid#ca9800;
+  border-radius: 5px;
+  background: transparent;
+}
+.tol4 .input1 {
+  margin-left: 0px;
+  margin-right: 3px;
+  font-family: manrope;
+  font-size: 12px;
+  color: white;
+  width: 155px;
+  height: 30px;
+  border: 3px solid#ca9800;
+  border-radius: 5px;
+  background: transparent;
+}
+.tol4 img {
+  display: inline-block;
+  margin: auto 10px;
+  width: 12px;
+  height: 15px;
+}
+.tol5 {
+  display: flex;
+  font-family: manrope;
+  font-size: 18px;
+  color: white;
+  margin: 30px 0 30px 40px;
+}
+.tol5 input {
+  width: 170px;
+  font-family: manrope;
+  font-size: 12px;
+  color: white;
+  display: inline-block;
+  margin-left: 166px;
+  width: 150px;
+  height: 30px;
+  border: 3px solid#ca9800;
+  border-radius: 5px;
+  background: transparent;
+}
+.tol5 .input1 {
+  margin-left: 0px;
+  margin-right: 3px;
+  font-family: manrope;
+  font-size: 12px;
+  color: white;
+  width: 155px;
+  height: 30px;
+  border: 3px solid#ca9800;
+  border-radius: 5px;
+  background: transparent;
+}
+.tol5 img {
+  display: inline-block;
+  margin: auto 10px;
+  width: 12px;
+  height: 15px;
+}
+.tol6 {
+  display: flex;
+  font-family: manrope;
+  font-size: 18px;
+  color: white;
+  margin: 30px 0 30px 40px;
+}
+.tol6 input {
+  width: 170px;
+  font-family: manrope;
+  font-size: 12px;
+  color: white;
+  display: inline-block;
+  margin-left: 132px;
+  width: 150px;
+  height: 30px;
+  border: 3px solid#ca9800;
+  border-radius: 5px;
+  background: transparent;
+}
+.tol6 .input1 {
+  margin-left: 0px;
+  margin-right: 3px;
+  font-family: manrope;
+  font-size: 12px;
+  color: white;
+  width: 155px;
+  height: 30px;
+  border: 3px solid#ca9800;
+  border-radius: 5px;
+  background: transparent;
+}
+.tol6 img {
+  display: inline-block;
+  margin: auto 10px;
+  width: 12px;
+  height: 15px;
+}
 .met label {
   width: 240px;
   display: inline-block;
@@ -385,7 +508,7 @@ body {
   margin: 30px 0 30px 40px;
 }
 .met input {
-  /* margin-left: 105px; */
+  margin-left: 1px;
   width: 335px;
   height: 30px;
   font-family: manrope;
@@ -498,6 +621,41 @@ body {
   /* transition: 800ms; */
   cursor: pointer;
 }
+.bt2 {
+  position: absolute;
+  /* margin: 0px 0px 100px 120px; */
+  /* padding: 28% 0 0 20%; */
+  bottom: 200px;
+  left: 685px;
+}
+.bt2 button {
+  margin: 0 20px;
+  width: 125px;
+  height: 45px;
+  font-family: manrope;
+  color: #ffff;
+  font-size: 16px;
+  border: 3px solid #ca9800;
+  border-radius: 5px;
+  background: transparent;
+  transition: 500ms;
+}
+.bt2 button:hover {
+  /* background-color: #FFFF; */
+  /* color: black; */
+  transform: scale(1.05);
+  box-shadow: 0px 5px 10px 0 #888888;
+  /* transition: 800ms; */
+  cursor: pointer;
+}
+.bt2 button:active {
+  background-color: #ffff;
+  color: black;
+  scale: (1.03);
+  transform: scale(0.95);
+  /* transition: 800ms; */
+  cursor: pointer;
+}
 .icon {
   display: flex;
   position: absolute;
@@ -563,7 +721,7 @@ input:checked[type="checkbox"]:before {
 }
 .note h3{
   display:none;
-  margin: -325px 0 0 280px;
+  margin: -320px 0 0 280px;
   font-size: 14px;
   font-family: manrope;
   color: white;
@@ -571,8 +729,8 @@ input:checked[type="checkbox"]:before {
 @media screen and (max-width: 1700px) {
   .note h3{
     display:none;
-    margin: -325px 0 0 280px;
-    font-size: 14px;
+    margin: -294px 0 0 179px;
+    font-size: 12px;
     font-family: manrope;
     color: white;
   }
@@ -708,9 +866,9 @@ input:checked[type="checkbox"]:before {
   }
   .home {
     border: 1px solid #ffffff;
-    margin: 17.5vh 4.5vh 4.5vh 4.5vh;
+    margin: 15.5vh 4.5vh 4.5vh 4.5vh;
     width: 1000px;
-    height: 440px;
+    height: 480px;
     border-radius: 12px;
     border-color: white;
     background-image: url(./img/main.jpg);
@@ -827,7 +985,7 @@ input:checked[type="checkbox"]:before {
   .bt1 {
     position: absolute;
     /* padding: 28% 0 0 20%; */
-    bottom: 195px;
+    bottom: 172px;
     left: 700px;
   }
   .bt1 button {
@@ -863,11 +1021,11 @@ input:checked[type="checkbox"]:before {
     font-family: manrope;
     font: size 16px;
     color: white;
-    margin: 20px 0 10px 30px;
+    margin: 20px 0 16px 30px;
   }
   .tol1 input {
     display: inline-block;
-    margin-left: 80px;
+    margin-left: 82px;
     width: 133px;
     height: 30px;
     font-family: manrope;
@@ -900,11 +1058,11 @@ input:checked[type="checkbox"]:before {
     font-family: manrope;
     font-size: 16px;
     color: white;
-    margin: 10px 0 10px 30px;
+    margin: 10px 0 16px 30px;
   }
   .tol2 input {
     display: inline-block;
-    margin-left: 40px;
+    margin-left: 43px;
     font-family: manrope;
     font-size: 12px;
     color: white;
@@ -937,11 +1095,11 @@ input:checked[type="checkbox"]:before {
     font-family: manrope;
     font-size: 16px;
     color: white;
-    margin: 10px 0 10px 30px;
+    margin: 10px 0 16px 30px;
   }
   .tol3 input {
     display: inline-block;
-    margin-left: 45px;
+    margin-left: 49px;
     font-family: manrope;
     font-size: 12px;
     color: white;
@@ -969,6 +1127,120 @@ input:checked[type="checkbox"]:before {
     width: 12px;
     height: 15px;
   }
+  .tol4 {
+    display: flex;
+    font-family: manrope;
+    font-size: 18px;
+    color: white;
+    margin: 10px 0 16px 30px;
+  }
+  .tol4 input {
+    width: 170px;
+    font-family: manrope;
+    font-size: 12px;
+    color: white;
+    display: inline-block;
+    margin-left: 104px;
+    width: 133px;
+    height: 30px;
+    border: 3px solid#ca9800;
+    border-radius: 5px;
+    background: transparent;
+  }
+  .tol4 .input1 {
+    margin-left: 0px;
+    margin-right: 3px;
+    font-family: manrope;
+    font-size: 12px;
+    color: white;
+    width: 143px;
+    height: 30px;
+    border: 3px solid#ca9800;
+    border-radius: 5px;
+    background: transparent;
+  }
+  .tol4 img {
+    display: inline-block;
+    margin: auto 10px;
+    width: 12px;
+    height: 15px;
+  }
+  .tol5 {
+    display: flex;
+    font-family: manrope;
+    font-size: 18px;
+    color: white;
+    margin: 10px 0 16px 30px;
+  }
+  .tol5 input {
+    width: 170px;
+    font-family: manrope;
+    font-size: 12px;
+    color: white;
+    display: inline-block;
+    margin-left: 66px;
+    width: 133px;
+    height: 30px;
+    border: 3px solid#ca9800;
+    border-radius: 5px;
+    background: transparent;
+  }
+  .tol5 .input1 {
+    margin-left: 0px;
+    margin-right: 3px;
+    font-family: manrope;
+    font-size: 12px;
+    color: white;
+    width: 143px;
+    height: 30px;
+    border: 3px solid#ca9800;
+    border-radius: 5px;
+    background: transparent;
+  }
+  .tol5 img {
+    display: inline-block;
+    margin: auto 10px;
+    width: 12px;
+    height: 15px;
+  }
+  .tol6 {
+    display: flex;
+    font-family: manrope;
+    font-size: 18px;
+    color: white;
+    margin: 10px 0 16px 30px;
+  }
+  .tol6 input {
+    width: 170px;
+    font-family: manrope;
+    font-size: 12px;
+    color: white;
+    display: inline-block;
+    margin-left: 31px;
+    width: 133px;
+    height: 30px;
+    border: 3px solid#ca9800;
+    border-radius: 5px;
+    background: transparent;
+  }
+  .tol6 .input1 {
+    margin-left: 0px;
+    margin-right: 3px;
+    font-family: manrope;
+    font-size: 12px;
+    color: white;
+    width: 143px;
+    height: 30px;
+    border: 3px solid#ca9800;
+    border-radius: 5px;
+    background: transparent;
+  }
+  .tol6 img {
+    display: inline-block;
+    margin: auto 10px;
+    width: 12px;
+    height: 15px;
+  }
   .met label {
     width: 135px;
     display: inline-block;
@@ -977,10 +1249,10 @@ input:checked[type="checkbox"]:before {
     font-family: manrope;
     font-size: 18px;
     color: white;
-    margin: 10px 0 10px 30px;
+    margin: 10px 0 16px 30px;
   }
   .met input {
-    /* margin-left: 105px; */
+    margin-left: 4px;
     width: 310px;
     height: 30px;
     font-family: manrope;
@@ -991,7 +1263,7 @@ input:checked[type="checkbox"]:before {
     background: transparent;
   }
   .upright {
-    margin: -305px 0 0 560px;
+    margin: -305px 0 0 570px;
     font-size: 26px;
     font-family: manrope;
     writing-mode: vertical-rl;

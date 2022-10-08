@@ -1,6 +1,5 @@
-const {app, BrowserWindow, ipcMain, autoUpdater} = require('electron')
+const {app, BrowserWindow, ipcMain} = require('electron')
 const path = require('path');
-const {autoUpdate} = require('electron-updater')
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 // eslint-disable-next-line global-require
@@ -45,7 +44,6 @@ const createWindow = () => {
 app.whenReady().then(() => {
   ipcMain.on('set-title', handleSetTitle)
   createWindow()
-  autoUpdater.checkForUpdates()
 })
 
 // Quit when all windows are closed, except on macOS. There, it's common
