@@ -281,11 +281,11 @@ $(document).ready(function () {
                   formProps.value = formProps.value.replace("in", "");
                   formProps.tol = formProps.tol.replace("in", "");
                   formProps.cvalue = (formProps.value/8.85074576738).toFixed(
-                    String(formProps.value).split(".")[1]?.length
+                    String(formProps.value).split(".")[1]&&String(formProps.value).split(".")[1].length
                   );
                   if (formProps.tol) {
                     formProps.ctolvalue = (formProps.tol/8.85074576738).toFixed(
-                      String(formProps.tol).split(".")[1]?.length
+                      String(formProps.tol).split(".")[1]&&String(formProps.tol).split(".")[1].length
                     );
                   }
                   unit_torque = "in";
@@ -299,11 +299,11 @@ $(document).ready(function () {
                   formProps.value = formProps.value.replace("ft", "");
                   formProps.tol = formProps.tol.replace("ft", "");
                   formProps.cvalue = (formProps.value/0.737562149277).toFixed(
-                    String(formProps.value).split(".")[1]?.length
+                    String(formProps.value).split(".")[1]&&String(formProps.value).split(".")[1].length
                   );
                   if (formProps.tol) {
                     formProps.ctolvalue = (formProps.tol/0.737562149277).toFixed(
-                      String(formProps.tol).split(".")[1]?.length
+                      String(formProps.tol).split(".")[1]&&String(formProps.tol).split(".")[1].length
                     );
                 }
                 unit_torque="ft"
@@ -317,21 +317,21 @@ $(document).ready(function () {
             }else{
               if (formProps.value <= 34) {
                 formProps.cvalue = (formProps.value * 8.85074576738).toFixed(
-                  String(formProps.value).split(".")[1]?.length
+                  String(formProps.value).split(".")[1]&&String(formProps.value).split(".")[1].length
                 );
                 if (formProps.tol) {
                   formProps.ctolvalue = (formProps.tol * 8.85074576738).toFixed(
-                    String(formProps.tol).split(".")[1]?.length
+                    String(formProps.tol).split(".")[1]&&String(formProps.tol).split(".")[1].length
                   );
                 }
                 unit_torque = "in";
               } else {
                 formProps.cvalue = (formProps.value * 0.737562149277).toFixed(
-                  String(formProps.value).split(".")[1]?.length
+                  String(formProps.value).split(".")[1]&&String(formProps.value).split(".")[1].length
                 );
                 if (formProps.tol) {
                   formProps.ctolvalue = (formProps.tol * 0.737562149277).toFixed(
-                    String(formProps.tol).split(".")[1]?.length
+                    String(formProps.tol).split(".")[1]&&String(formProps.tol).split(".")[1].length
                   );
                 }
                 unit_torque = "ft";
@@ -347,10 +347,10 @@ $(document).ready(function () {
         if(formProps.engtomet1){
             if ((formProps.value1.includes(".")) && (formProps.tol1.includes("."))){
               formProps.cvalue = (formProps.value1/0.03937007874).toFixed(
-                String(formProps.value1).split(".")[1]?.length-1
+                String(formProps.value1).split(".")[1]&&String(formProps.value1).split(".")[1].length-1
               );
               formProps.ctolvalue = (formProps.tol1/0.03937007874).toFixed(
-                String(formProps.tol1).split(".")[1]?.length-1
+                String(formProps.tol1).split(".")[1]&&String(formProps.tol1).split(".")[1].length-1
               );
               texttocopy = `<unitsgrp><metric>${formProps.cvalue} ${
                 Number(formProps.ctolvalue) ? "± " + formProps.ctolvalue + " " : ""
@@ -361,10 +361,10 @@ $(document).ready(function () {
               inputDecimal= ((formProps.value1.includes(".")) ? formProps.value1 : formProps.value1 + '.0');
               tolDecimal= ((formProps.tol1.includes(".")) ? formProps.tol1 : formProps.tol1 + '.0');
               formProps.cvalue = (inputDecimal/0.03937007874).toFixed(
-                String(inputDecimal).split(".")[1]?.length-1
+                String(inputDecimal).split(".")[1]&&String(inputDecimal).split(".")[1].length-1
               );
               formProps.ctolvalue = (tolDecimal/0.03937007874).toFixed(
-                String(tolDecimal).split(".")[1]?.length-1
+                String(tolDecimal).split(".")[1]&&String(tolDecimal).split(".")[1].length-1
               );
               texttocopy = `<unitsgrp><metric>${formProps.cvalue} ${
                 Number(formProps.ctolvalue) ? "± " + formProps.ctolvalue + " " : ""
@@ -376,10 +376,10 @@ $(document).ready(function () {
         }else{
           if ((formProps.value1.includes(".")) && (formProps.tol1.includes("."))){
             formProps.cvalue = (formProps.value1 * 0.03937007874).toFixed(
-              String(formProps.value1).split(".")[1]?.length+1
+              String(formProps.value1).split(".")[1]&&String(formProps.value1).split(".")[1].length+1
             );
             formProps.ctolvalue = (formProps.tol1 * 0.03937007874).toFixed(
-              String(formProps.tol1).split(".")[1]?.length+1
+              String(formProps.tol1).split(".")[1]&&String(formProps.tol1).split(".")[1].length+1
             );
             texttocopy = `<unitsgrp><metric>${formProps.value1} ${
               Number(formProps.tol1) ? "± " + formProps.tol1 + " " : ""
@@ -390,10 +390,10 @@ $(document).ready(function () {
             inputDecimal= ((formProps.value1.includes(".")) ? formProps.value1 : formProps.value1 + '.0');
             tolDecimal= ((formProps.tol1.includes(".")) ? formProps.tol1 : formProps.tol1 + '.0');
             formProps.cvalue = (inputDecimal*0.03937007874).toFixed(
-              String(inputDecimal).split(".")[1]?.length+1
+              String(inputDecimal).split(".")[1]&&String(inputDecimal).split(".")[1].length+1
             );
             formProps.ctolvalue = (tolDecimal*0.03937007874).toFixed(
-              String(tolDecimal).split(".")[1]?.length+1
+              String(tolDecimal).split(".")[1]&&String(tolDecimal).split(".")[1].length+1
             );
             texttocopy = `<unitsgrp><metric>${inputDecimal} ${
               Number(tolDecimal) ? "± " + tolDecimal + " " : ""
@@ -406,10 +406,10 @@ $(document).ready(function () {
         if(formProps.engtomet2){
           if ((formProps.value1a.includes(".")) && (formProps.tol1a.includes("."))){
             formProps.cvalue = (formProps.value1a/0.39370079).toFixed(
-              String(formProps.value1a).split(".")[1]?.length-1
+              String(formProps.value1a).split(".")[1]&&String(formProps.value1a).split(".")[1].length-1
             );
             formProps.ctolvalue = (formProps.tol1a/0.39370079).toFixed(
-              String(formProps.tol1a).split(".")[1]?.length-1
+              String(formProps.tol1a).split(".")[1]&&String(formProps.tol1a).split(".")[1].length-1
             );
             texttocopy = `<unitsgrp><metric>${formProps.cvalue} ${
               Number(formProps.ctolvalue) ? "± " + formProps.ctolvalue + " " : ""
@@ -420,10 +420,10 @@ $(document).ready(function () {
             inputDecimal= ((formProps.value1a.includes(".")) ? formProps.value1a : formProps.value1a + '.0');
             tolDecimal= ((formProps.tol1a.includes(".")) ? formProps.tol1a : formProps.tol1a + '.0');
             formProps.cvalue = (inputDecimal/0.39370079).toFixed(
-              String(inputDecimal).split(".")[1]?.length-1
+              String(inputDecimal).split(".")[1]&&String(inputDecimal).split(".")[1].length-1
             );
             formProps.ctolvalue = (tolDecimal/0.39370079).toFixed(
-              String(tolDecimal).split(".")[1]?.length-1
+              String(tolDecimal).split(".")[1]&&String(tolDecimal).split(".")[1].length-1
             );
             texttocopy = `<unitsgrp><metric>${formProps.cvalue} ${
               Number(formProps.ctolvalue) ? "± " + formProps.ctolvalue + " " : ""
@@ -434,10 +434,10 @@ $(document).ready(function () {
         }else{
           if ((formProps.value1a.includes(".")) && (formProps.tol1a.includes("."))){
             formProps.cvalue = (formProps.value1a * 0.39370079).toFixed(
-              String(formProps.value1a).split(".")[1]?.length+1
+              String(formProps.value1a).split(".")[1]&&String(formProps.value1a).split(".")[1].length+1
             );
             formProps.ctolvalue = (formProps.tol1a * 0.39370079).toFixed(
-              String(formProps.tol1a).split(".")[1]?.length+1
+              String(formProps.tol1a).split(".")[1]&&String(formProps.tol1a).split(".")[1].length+1
             );
             texttocopy = `<unitsgrp><metric>${formProps.value1a} ${
               Number(formProps.tol1a) ? "± " + formProps.tol1a + " " : ""
@@ -448,10 +448,10 @@ $(document).ready(function () {
             inputDecimal= ((formProps.value1a.includes(".")) ? formProps.value1a : formProps.value1a + '.0');
             tolDecimal= ((formProps.tol1a.includes(".")) ? formProps.tol1a : formProps.tol1a + '.0');
             formProps.cvalue = (inputDecimal*0.39370079).toFixed(
-              String(inputDecimal).split(".")[1]?.length+1
+              String(inputDecimal).split(".")[1]&&String(inputDecimal).split(".")[1].length+1
             );
             formProps.ctolvalue = (tolDecimal*0.39370079).toFixed(
-              String(tolDecimal).split(".")[1]?.length+1
+              String(tolDecimal).split(".")[1]&&String(tolDecimal).split(".")[1].length+1
             );
             texttocopy = `<unitsgrp><metric>${inputDecimal} ${
               Number(tolDecimal) ? "± " + tolDecimal + " " : ""
@@ -463,23 +463,23 @@ $(document).ready(function () {
       }else if (formProps.value2){
         if(formProps.engtomet3){
         formProps.cvalue=(formProps.value2/2.20462262).toFixed(
-          String(formProps.value2).split(".")[1]?.length
+          String(formProps.value2).split(".")[1]&&String(formProps.value2).split(".")[1].length
         );
         texttocopy = `<unitsgrp><metric>${formProps.cvalue} kg</metric><english>${formProps.value2} lb</english></unitsgrp>`
       }else{
         formProps.cvalue=(formProps.value2*2.20462262).toFixed(
-          String(formProps.value2).split(".")[1]?.length
+          String(formProps.value2).split(".")[1]&&String(formProps.value2).split(".")[1].length
         );
         texttocopy = `<unitsgrp><metric>${formProps.value2} kg</metric><english>${formProps.cvalue} lb</english></unitsgrp>`
       }
     }else if (formProps.value3){
       if (formProps.engtomet4){
         formProps.cvalue=((formProps.value3-32)*(0.555555555555556)).toFixed(
-          String(formProps.value3).split(".")[1]?.length
+          String(formProps.value3).split(".")[1]&&String(formProps.value3).split(".")[1].length
         );
         if (formProps.tol1b) {
         formProps.ctolvalue = ((formProps.tol1b-32)*(0.555555555555556)).toFixed(
-          String(formProps.tol1b).split(".")[1]?.length
+          String(formProps.tol1b).split(".")[1]&&String(formProps.tol1b).split(".")[1].length
           );
         }
         texttocopy= `<unitsgrp><metric>${formProps.cvalue} ${
@@ -489,11 +489,11 @@ $(document).ready(function () {
         }°F</english></unitsgrp>`
       }else{
         formProps.cvalue=((formProps.value3*1.8)+32).toFixed(
-          String(formProps.value3).split(".")[1]?.length
+          String(formProps.value3).split(".")[1]&&String(formProps.value3).split(".")[1].length
         );
         if (formProps.tol1b) {
         formProps.ctolvalue = ((formProps.tol1b*1.8)+32).toFixed(
-          String(formProps.tol1b).split(".")[1]?.length
+          String(formProps.tol1b).split(".")[1]&&String(formProps.tol1b).split(".")[1].length
           );
         }
         texttocopy= `<unitsgrp><metric>${formProps.value3} ${
@@ -504,11 +504,11 @@ $(document).ready(function () {
     }else if (formProps.value4){
       if (formProps.engtomet5){
         formProps.cvalue=(formProps.value4 * 3.785412).toFixed(
-          String(formProps.value4).split(".")[1]?.length
+          String(formProps.value4).split(".")[1]&&String(formProps.value4).split(".")[1].length
         );
         if (formProps.tol1c) {
         formProps.ctolvalue = (formProps.value4 * 3.785412).toFixed(
-          String(formProps.tol1c).split(".")[1]?.length
+          String(formProps.tol1c).split(".")[1]&&String(formProps.tol1c).split(".")[1].length
           );
         }
         texttocopy= `<unitsgrp><metric>${formProps.cvalue} ${
@@ -518,11 +518,11 @@ $(document).ready(function () {
         }L/min</english></unitsgrp>`
       }else{
         formProps.cvalue=(formProps.value4 * 0.264172).toFixed(
-          String(formProps.value4).split(".")[1]?.length
+          String(formProps.value4).split(".")[1]&&String(formProps.value4).split(".")[1].length
         );
         if (formProps.tol1c) {
         formProps.ctolvalue = (formProps.value4 * 0.264172).toFixed(
-          String(formProps.tol1c).split(".")[1]?.length
+          String(formProps.tol1c).split(".")[1]&&String(formProps.tol1c).split(".")[1].length
           );
         }
         texttocopy= `<unitsgrp><metric>${formProps.value4} ${
@@ -534,11 +534,11 @@ $(document).ready(function () {
   }else if (formProps.value5){
     if (formProps.engtomet6){
       formProps.cvalue=(formProps.value5 * 6.89475727999991).toFixed(
-        String(formProps.value5).split(".")[1]?.length
+        String(formProps.value5).split(".")[1]&&String(formProps.value5).split(".")[1].length
       );
       if (formProps.tol1d) {
       formProps.ctolvalue = (formProps.value5 * 6.89475727999991).toFixed(
-        String(formProps.tol1d).split(".")[1]?.length
+        String(formProps.tol1d).split(".")[1]&&String(formProps.tol1d).split(".")[1].length
         );
       }
       texttocopy= `<unitsgrp><metric>${formProps.cvalue} ${
@@ -548,11 +548,11 @@ $(document).ready(function () {
       }psi</english></unitsgrp>`
     }else{
       formProps.cvalue=(formProps.value5 * 0.14503773800722).toFixed(
-        String(formProps.value5).split(".")[1]?.length
+        String(formProps.value5).split(".")[1]&&String(formProps.value5).split(".")[1].length
       );
       if (formProps.tol1d) {
       formProps.ctolvalue = (formProps.value5 * 0.14503773800722).toFixed(
-        String(formProps.tol1d).split(".")[1]?.length
+        String(formProps.tol1d).split(".")[1]&&String(formProps.tol1d).split(".")[1].length
         );
       }
       texttocopy= `<unitsgrp><metric>${formProps.value5} ${
@@ -564,12 +564,12 @@ $(document).ready(function () {
   }else if (formProps.value6){
     if (formProps.engtomet7){
       formProps.cvalue=(formProps.value6 * 3.78541).toFixed(
-        String(formProps.value6).split(".")[1]?.length
+        String(formProps.value6).split(".")[1]&&String(formProps.value6).split(".")[1].length
       );
       texttocopy= `<unitsgrp><metric>${formProps.cvalue} L</metric><english>${formProps.value6} US gal</english></unitsgrp>`
     }else{
       formProps.cvalue=(formProps.value6 * 0.264172).toFixed(
-        String(formProps.value6).split(".")[1]?.length
+        String(formProps.value6).split(".")[1]&&String(formProps.value6).split(".")[1].length
       );
       texttocopy= `<unitsgrp><metric>${formProps.value6} L</metric><english>${formProps.cvalue} US gal</english></unitsgrp>`
         }
@@ -605,7 +605,6 @@ $(document).ready(function () {
     <div class="thanks">
     <p>Thanks to all the individuals who have contributed</p>
     </div><br> 
-    <marquee width="100%" direction="up" height="280px" scrollamount="6">
     <div class="names">
         <h3 style="color: #e4b62f;">Graphic Insert Tool</h3>
         <div class="names1">
@@ -635,12 +634,6 @@ $(document).ready(function () {
                 <li>Zackriya Thajudeen</li>
                 <li>Prabhu Vijayan</li>
             </ul>
-        </div>
-        <h3 style="color: #e4b62f;">Warning Insert Tool</h3>
-        <div class="names1">
-            <ul>
-                <li>Deepak Melwani</li>
-            </ul>                
         </div>
         <h3 style="color: #e4b62f;">Prefix Update Tool</h3>
         <div class="names1">
@@ -679,3 +672,4 @@ $(document).ready(function () {
     $(".home").css("background-image", "url(img/main.jpg)");
   });
 });
+
