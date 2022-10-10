@@ -93,8 +93,9 @@ log.info("Update available")
 autoUpdater.on("checking-for-update",()=>{
   log.info("checking-for-update")
 })
-  autoUpdater.on("download-progress",()=>{
-    log.info("download-progress")
+  autoUpdater.on("download-progress",(progressTrack)=>{
+    log.info("\n\ndownload-progress")
+  log.info(progressTrack)
 })
 autoUpdater.on("update-downloaded",()=>{
   log.info("update-downloaded")
