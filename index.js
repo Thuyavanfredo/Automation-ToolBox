@@ -96,6 +96,9 @@ autoUpdater.on("checking-for-update",()=>{
   autoUpdater.on("download-progress",()=>{
     log.info("download-progress")
 })
+autoUpdater.on("update-downloaded",()=>{
+  log.info("update-downloaded")
+})
 autoUpdater.on("update-not-available",()=>{
   log.info("update-not-available")
 })
