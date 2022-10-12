@@ -672,4 +672,3 @@ $(document).ready(function () {
     $(".home").css("background-image", "url(img/main.jpg)");
   });
 });
-
