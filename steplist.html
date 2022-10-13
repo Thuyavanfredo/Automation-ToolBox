@@ -27,7 +27,7 @@
     </div>
     <div class="note">
       <font color=white>
-        By default Page-wide type for graphics is enabled. For Column-wide type select the check box
+        By default Page-wide type for graphics is enabled. For Column-wide type select the check box. Alphabets are case sensitive.
       </font>
     </div>
   </div>
@@ -161,7 +161,7 @@
       data.map((item)=>{
         if(item[6]){
           let figurePreffix =`<figure figure-style="${item[7]?'column-wide':'page-wide'}" id="i06804732.${item[6]}"><graphic controlno="${item[6]}" href="x-wc://file=${item[6]}.cvx"/> `
-          let figureSuffix=`</figure><para></para>`
+          let figureSuffix=`</figure>`
           let figureMiddle=""
           // let forceStop=false
           item.slice(8,item.length).map((a)=>{
@@ -169,7 +169,7 @@
               data.map((b)=>{
                 if(a==b[0]){
                   let PN = getPN(b)
-                  figureMiddle+=`<callpara><callout>${a.toUpperCase()}</callout><para><cpn-id><partno>${PN}</partno><cpn></cpn></cpn-id></para></callpara>`
+                  figureMiddle+=`<callpara><callout>${a}</callout><para><cpn-id><partno>${PN}</partno><cpn></cpn></cpn-id></para></callpara>`
                 }
               })
             }
@@ -197,7 +197,7 @@
               data.map((b)=>{
                 if(a==b[0]){
                   let PN = getPN(b)
-                  figureMiddle+=`<callpara><callout>${a.toUpperCase()}</callout><para><cpn-id><partno>${PN}</partno><cpn></cpn></cpn-id></para></callpara>`
+                  figureMiddle+=`<callpara><callout>${a}</callout><para><cpn-id><partno>${PN}</partno><cpn></cpn></cpn-id></para></callpara>`
                 }
               })
             }
@@ -214,7 +214,7 @@
     $("button:eq(2)").click(function(){
       let figureOut = ""
       data.map((item)=>{
-        if(item[8]){
+        if(item[6]){
           let figurePreffix =`<step id="i06804732.9"><figure figure-style="${item[7]?'column-wide':'page-wide'}" id="i06804732.${item[6]}"><graphic controlno="${item[6]}" href="x-wc://file=${item[6]}.cvx"/> `
           let figureSuffix=`</figure><para></para></step>`
           let figureMiddle=""
@@ -224,7 +224,7 @@
               data.map((b)=>{
                 if(a==b[0]){
                   let PN = getPN(b)
-                  figureMiddle+=`<callpara><callout>${a.toUpperCase()}</callout><para><cpn-id><partno>${PN}</partno><cpn></cpn></cpn-id></para></callpara>`
+                  figureMiddle+=`<callpara><callout>${a}</callout><para><cpn-id><partno>${PN}</partno><cpn></cpn></cpn-id></para></callpara>`
                 }
               })
             }
