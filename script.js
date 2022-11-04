@@ -507,7 +507,7 @@ $(document).ready(function () {
           String(formProps.value4).split(".")[1]&&String(formProps.value4).split(".")[1].length
         );
         if (formProps.tol1c) {
-        formProps.ctolvalue = (formProps.value4 * 3.785412).toFixed(
+        formProps.ctolvalue = (formProps.tol1c * 3.785412).toFixed(
           String(formProps.tol1c).split(".")[1]&&String(formProps.tol1c).split(".")[1].length
           );
         }
@@ -521,7 +521,7 @@ $(document).ready(function () {
           String(formProps.value4).split(".")[1]&&String(formProps.value4).split(".")[1].length
         );
         if (formProps.tol1c) {
-        formProps.ctolvalue = (formProps.value4 * 0.264172).toFixed(
+        formProps.ctolvalue = (formProps.tol1c * 0.264172).toFixed(
           String(formProps.tol1c).split(".")[1]&&String(formProps.tol1c).split(".")[1].length
           );
         }
@@ -537,7 +537,7 @@ $(document).ready(function () {
         String(formProps.value5).split(".")[1]&&String(formProps.value5).split(".")[1].length
       );
       if (formProps.tol1d) {
-      formProps.ctolvalue = (formProps.value5 * 6.89475727999991).toFixed(
+      formProps.ctolvalue = (formProps.tol1d * 6.89475727999991).toFixed(
         String(formProps.tol1d).split(".")[1]&&String(formProps.tol1d).split(".")[1].length
         );
       }
@@ -551,7 +551,7 @@ $(document).ready(function () {
         String(formProps.value5).split(".")[1]&&String(formProps.value5).split(".")[1].length
       );
       if (formProps.tol1d) {
-      formProps.ctolvalue = (formProps.value5 * 0.14503773800722).toFixed(
+      formProps.ctolvalue = (formProps.tol1d * 0.14503773800722).toFixed(
         String(formProps.tol1d).split(".")[1]&&String(formProps.tol1d).split(".")[1].length
         );
       }
